@@ -11,7 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.personx.decloak.screens.HomeScreen
 import com.personx.decloak.ui.theme.DecloakTheme
+import com.personx.decloak.ui.utils.getWindowSizeClass
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +22,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             DecloakTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    HomeScreen(
+                        windowSizeClass = getWindowSizeClass(),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
